@@ -1,0 +1,161 @@
+body {
+	text-align:center;
+}
+#content {
+	margin:10px;
+	position:relative;
+	display:inline-block;
+	overflow:auto;
+}
+
+div.block {
+	display:inline-block;
+	background-color: yellow;
+	border:0.5px white solid;
+	margin:0px;
+}
+
+div.non {
+	background-color: #b32d00;
+	display:inline-block;
+	border:0.5px #b32d00 solid;
+}
+
+
+div.room {
+	display:inline-block;
+	background-color: #ccffff;
+	border:0.5px #ccffff solid;
+}
+
+div#study {
+	position: absolute;
+}
+
+div#player1 {
+	position: absolute;
+	border-radius: 50%;
+}
+
+div#player2 {
+	position: absolute;
+	border-radius: 50%;
+}
+
+div#player3 {
+	position: absolute;
+	border-radius: 50%;
+}
+
+div#player4 {
+	position: absolute;
+	border-radius: 50%;
+}
+
+div#player5 {
+	position: absolute;
+	border-radius: 50%;
+}
+
+div#player6 {
+	position: absolute;
+	border-radius: 50%;
+}
+
+.available {
+	position: absolute;
+	background-color: grey;
+	border-radius: 50%;
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+div.header {
+	background-color: #ccf5ff;
+	font-weight: bold;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+div.card{
+	display: inline-block;
+	background-color: #ffffb3;
+	width: 100px;
+	height:140px;
+	text-align:center;
+	margin:0px 1px 1px 1px;
+	border:1px black solid;
+}
+
+div.card img {
+	width:80px;
+	height:80px;
+	margin:10px;
+}
+#viewcard {
+	float:left;
+	width:80px;
+	height:80px;
+}
+
+.dropdown {
+	float:left;
+    position: relative;
+    display: inline-block;
+    margin:10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+div#players{
+	display:inline-block;
+	float:right;
+}
+
+div.player{
+	position: relative; 
+	display: table; 
+	margin:10px;
+	padding:5px;
+	text-align:right;
+}
+
+p.player_text {
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+}
+div.player_color{
+	margin:5px;
+	display:inline-block;
+	border-radius: 50%;
+	float:right;
+}
+
+input[type="radio"]
+{
+	margin-left:20px;
+}
+.button {
+	margin-top:5px;
+}
+
+a {
+	text-decoration: none;
+}
