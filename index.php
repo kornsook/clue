@@ -71,12 +71,19 @@
 		setcookie("card", serialize($card), time() + (86400 * 30), "/");
 		setcookie("number", sizeof($name), time() + (86400 * 30), "/");
 		setcookie("color", serialize($color), time() + (86400 * 30), "/");
+
+		setcookie("rounds", 0, time() + (86400 * 30), "/");
 		$_SESSION['start'] = true;
 
+		if(!isset($_COOKIE['leader3']))
+			setcookie("leader3", serialize(array()), time() + (86400 * 30), "/");
+		if(!isset($_COOKIE['leader6']))
+			setcookie("leader6", serialize(array()), time() + (86400 * 30), "/");
 		header('Location: clue.php');
 		exit;
 		
 	}
+	setcookie("kind", $number, time() + (86400 * 30), "/");
 	if(isset($_POST['player'])) {
 		$player_box = $_POST['player'];
 	}
@@ -171,6 +178,7 @@
 				<input type="hidden" name="start" value="true" />
 				<input type="submit" value="Let's go" />
 			</form>
+			<a href='leaderboard.php'><button>Leaderboard</button></a>
 		</div><br>
 		<?php
 			for($i=0;$i <= 5;$i++) {

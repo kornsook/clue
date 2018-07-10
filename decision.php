@@ -46,13 +46,28 @@
 		<div id="content">
 			<?php
 				if($won){
+					$temp = array();
+					$rounds = $_COOKIE['rounds'];
+					array_push($temp,$name_a);
+					array_push($temp,$rounds);
+					if($_COOKIE['kind'] == 3) {
+						$leader3 = unserialize($_COOKIE['leader3']);
+						array_push($leader3,$temp);
+						setcookie("leader3", serialize($leader3), time() + (86400 * 30), "/");
+					}
+					if($_COOKIE['kind'] == 6){
+						$leader6 = unserialize($_COOKIE['leader6']);
+						array_push($leader6,$temp);
+						setcookie("leader6", serialize($leader6), time() + (86400 * 30), "/");
+					}
 					echo "<div class='name'>$name_a</div><br>";
 					echo "<div class='won'>WON</div>";
 					for($i=0;$i < sizeof($answer);$i++) {
 						codeToCard($answer[$i]);
 					}
 					echo "<br>";
-					echo "<a href='index.php'><button>Restart</button></a>";
+					echo "<a href='index.php'><button>Restart</button></a><br>";
+					echo "<a href='leaderboard.php'><button>Leaderboard</button></a>";
 					session_destroy();
 				}
 				else{					

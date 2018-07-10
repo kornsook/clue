@@ -162,6 +162,10 @@
 		}
 		else if($_SESSION['stage'] == 'dice'){
 			$dice = true;			
+			if($_SESSION['turn'] == 1) {
+				$rounds = $_COOKIE['rounds'];
+				setcookie("rounds", $round + 1, time() + (86400 * 30), "/");
+			}
 		}
 		else if($_SESSION['stage'] == 'walking') {						
 			$available = array();

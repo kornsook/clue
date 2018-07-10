@@ -208,4 +208,18 @@
 		echo	"</div>";
 		echo "</div>";
 	}
+	function sortSecond($array) {
+		for($i=0;$i < sizeof($array)-1;$i++){
+			for($j=$i+1;$j < sizeof($array);$j++){
+				if($array[$i][1] < $array[$j][1]) {					
+					$temp = $array[$i];
+					$array[$i][0] = $array[$j][0];
+					$array[$i][1] = $array[$j][1];
+					$array[$j][0] = $temp[0];
+					$array[$j][1] = $temp[1];
+				}
+			}
+		}		
+		return $array;	
+	}
 ?>
